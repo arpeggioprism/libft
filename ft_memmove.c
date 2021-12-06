@@ -1,25 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jshin <jshin@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/25 16:54:49 by jshin             #+#    #+#             */
-/*   Updated: 2021/11/25 18:14:41 by jshin            ###   ########.fr       */
+/*   Created: 2021/11/25 20:20:03 by jshin             #+#    #+#             */
+/*   Updated: 2021/12/06 18:54:41 by jshin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t	i;
+	unsigned char	*dst_copy;
+	unsigned char	*src_copy;
 
-	if (!s)
+	if (!dst && !src)
 		return (NULL);
-	i = 0;
-	while (i < n)
-		((unsigned char *)s)[i++] = (unsigned char)c;
-	return (s);
+	dst_copy = dst;
+	src_copy = (unsigned char *)src;
+	if (dst_copy < src_copy)
+		while (len--)
+			*dst_copy++ = *src_copy++;
+	else
+	{
+		dst_copy += (len - 1);
+		src_copy += (len - 1);
+		while (len--)
+			*dst_copy-- = *src_copy--;
+	}
+	return (dst);
 }
