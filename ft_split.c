@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jshin <jshin@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/06 12:38:12 by jshin             #+#    #+#             */
-/*   Updated: 2021/12/06 20:50:46 by jshin            ###   ########.fr       */
+/*   Created: 2021/12/05 12:38:12 by jshin             #+#    #+#             */
+/*   Updated: 2021/12/08 16:43:36 by jshin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,9 +79,11 @@ char	**ft_split(char const *s, char c)
 	unsigned int	nb_strs;
 	unsigned int	i;
 
+	if (!s)
+		return (NULL);
 	nb_strs = ft_get_nb_strs(s, c);
 	tab = (char **)malloc(sizeof(char *) * (nb_strs + 1));
-	if (!s || !tab)
+	if (!tab)
 		return (NULL);
 	i = 0;
 	next_str = (char *)s;
@@ -92,8 +94,7 @@ char	**ft_split(char const *s, char c)
 		tab[i] = (char *)malloc(sizeof(char) * (next_str_len + 1));
 		if (!tab[i])
 			return (ft_malloc_error(tab));
-		ft_strlcpy(tab[i], next_str, next_str_len + 1);
-		i++;
+		ft_strlcpy(tab[i++], next_str, next_str_len + 1);
 	}
 	tab[i] = NULL;
 	return (tab);
