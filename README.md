@@ -1,7 +1,7 @@
 # libft
 
 ft_isdigit
- <목차>
+<목차>
 
 0. C언어, C++ isdigit 헤더 파일
 
