@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jshin <jshin@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/06 19:26:41 by jshin             #+#    #+#             */
-/*   Updated: 2021/12/06 19:32:34 by jshin            ###   ########.fr       */
+/*   Created: 2021/12/01 14:08:11 by jshin             #+#    #+#             */
+/*   Updated: 2021/12/08 15:54:49 by jshin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,18 @@ int	ft_isspace(char c)
 
 int	ft_atoi(const char *str)
 {
-	size_t	i;
 	long	nbr;
 	long	sign;
+	size_t	i;
 
 	nbr = 0;
-	sign = -1;
+	sign = 1;
 	i = 0;
 	while ((str[i] != '\0') && ft_isspace(str[i]) == 1)
 		i++;
 	if (str[i] == '-')
 		sign = -1;
-	if ((str[i] == '+') || (str[i] == '-'))
+	if ((str[i] == '-') || (str[i] == '+'))
 		i++;
 	while ((str[i] != '\0') && ('0' <= str[i]) && (str[i] <= '9'))
 	{
