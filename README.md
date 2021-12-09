@@ -1,5 +1,57 @@
 # libft
 
+== 함수 ==
+{|class="wikitable"
+! 함수 !! 설명
+|-
+!colspan=2| 문자 검사
+|-
+| int '''isalnum''' ( int c );
+||c가 ''알파벳 또는 숫자''이면 0이 아닌 값을 반환한다.
+|-
+| int '''isalpha''' ( int c );
+||c가 ''알파벳''이면 0이 아닌 값을 반환한다.
+|-
+| int '''iscntrl''' ( int c );
+||c가 ''[[제어 문자]]''이면 0이 아닌 값을 반환한다.
+|-
+| int '''isdigit''' ( int c );
+||c가 ''숫자''이면 0이 아닌 값을 반환한다.
+|-
+| int '''isgraph''' ( int c );
+||c가 ''그래픽 문자''이면 0이 아닌 값을 반환한다.
+|-
+| int '''islower''' ( int c );
+||c가 ''소문자''이면 0이 아닌 값을 반환한다.
+|-
+| int '''isprint''' ( int c );
+||c가 ''출력할 수 있는 문자''이면 0이 아닌 값을 반환한다.
+|-
+| int '''ispunct''' ( int c );
+||c가 ''구두점 문자''이면 0이 아닌 값을 반환한다.
+|-
+| int '''isspace''' ( int c );
+||c가 ''공백 문자''이면 0이 아닌 값을 반환한다.
+|-
+| int '''isupper''' ( int c );
+||c가 ''대문자''이면 0이 아닌 값을 반환한다.
+|-
+| int '''isxdigit''' ( int c );
+||c가 ''16진 숫자''이면 0이 아닌 값을 반환한다.
+|-
+!colspan=2| 문자 변환
+|-
+| int '''tolower''' ( int c );
+||c를 소문자로 변환한다.
+|-
+| int '''toupper''' ( int c );
+||c를 대문자로 변환한다.
+|-
+| int '''__toascii''' ( int c );
+||c를 아스키 코드로 변환한다.
+|-
+|}
+
 ft_isalpha
 <목차>
 1. isalpha 함수 원형과 사용법
