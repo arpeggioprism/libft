@@ -112,7 +112,7 @@ Description | Param. #1 | Param. #2 | Param. #3 | Return Value
 Compares byte string s1 against byte string s2 | Memory area s1| Memory area s2 | The number of bytes | < 0 if s1 is less than s2, > 0 if s1 is graeter than s2, = 0 if s1 is equal to s2 
 
 ## [ft_strlen](libft/ft_strlen.c) 
-`size_t     ft_strlen(const char *s)`
+`size_t     ft_strlen(const char *s)` `size_t     len`
 
 Description | Param. #1 | Return Values
 :-----------: | :-----------: | :-----------:
