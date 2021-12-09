@@ -55,7 +55,8 @@ Libc functions | Additional functions | Bonus Functions | Personal Functions
 [ft_tolower](#ft_tolower)	|   | | 
 [ft_calloc](#ft_calloc)     |   | |
 
-## [ft_memset](libft/ft_memset.c) header: `string.h`
+## [ft_memset](libft/ft_memset.c)
+header: `string.h`
 
 `void       *ft_memset(void *s, int c, size_t len)`
 
@@ -111,7 +112,8 @@ Description | Param. #1 | Param. #2 | Param. #3 | Return Value
 :-----------: | :-----------: | :-----------: | :-----------: | :-----------:
 Compares byte string s1 against byte string s2 | Memory area s1| Memory area s2 | The number of bytes | < 0 if s1 is less than s2, > 0 if s1 is graeter than s2, = 0 if s1 is equal to s2 
 
-## [ft_strlen](libft/ft_strlen.c) header: `string.h`
+## [ft_strlen](libft/ft_strlen.c)
+header: `string.h`
 `size_t     ft_strlen(const char *s)` `size_t     len`
 
 Description | Param. #1 | Return Values
