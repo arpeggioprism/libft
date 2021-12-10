@@ -59,8 +59,8 @@ Libc functions | Additional functions | Bonus Functions | Personal Functions
 header: `string.h` or `memory.h`
 
 `void       *ft_memset(void *s, int c, size_t len)`
-return value: success 'ptr'
-              fail 'NULL'
+
+return value: success 'ptr', fail 'NULL'
 
 Description | Param. #1 | Param. #2 | Param. #3 | Return Value
 :-----------: | :-----------: | :-----------: | :-----------: | :-----------:
