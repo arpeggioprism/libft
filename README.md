@@ -68,6 +68,7 @@ return (`ptr`);  : success
 
        (`NULL`); : fail
 
+
 ## [ft_bzero](libft/ft_bzero.c)
 
 `void       *ft_bzero(void *s,  size_t n)`
