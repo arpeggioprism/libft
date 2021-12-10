@@ -56,7 +56,7 @@ Libc functions | Additional functions | Bonus Functions | Personal Functions
 [ft_calloc](#ft_calloc)     |   | |
 
 ## [ft_memset](libft/ft_memset.c)
-header: `string.h`
+header: `string.h` or `memory.h`
 
 `void       *ft_memset(void *s, int c, size_t len)`
 
