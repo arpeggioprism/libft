@@ -64,7 +64,7 @@ Description | Param. #1 | Param. #2 | Param. #3 | Return Value
 :-----------: | :-----------: | :-----------: | :-----------: | :-----------:
 Fill with "len" bytes of "c" the memory of "s"| The string on which to operate | Value c (converted to an unsigned char) | The number of bytes | A pointer to the memory area s
 
-return (`ptr`); or fail:(`NULL`);
+return (`ptr`); fail:(`NULL`);
 
 
 ## [ft_bzero](libft/ft_bzero.c)
