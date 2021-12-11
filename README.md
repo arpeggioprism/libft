@@ -77,12 +77,16 @@ Description | Param. #1 | Param. #2 | Return Value
  Erases the data in the "n" bytes of the memory starting at the location pointed by "s" writing zeroes | The string on which to operate | The number of bytes | None
 
  ## [ft_memcpy](libft/ft_memcpy.c)
+header: `string.h`
 
 `void       *ft_memcpy(void *dst, const void *src, size_t n)`
 
 Description | Param. #1 | Param. #2 | Param. #3 | Return Value
 :-----------: | :-----------: | :-----------: | :-----------: | :-----------:
 Copies n bytes from memory area src to memory of dst. The memory  areas  must  not  overlap.  Use [ft_memmove](#ft_memmove) if the memory areas do overlap.| Memory area dst | Memory area src | The number of bytes | A pointer to the memory area dst
+
+return (`dst`);
+
 
  ## [ft_memccpy](libft/ft_memccpy.c)
 
