@@ -6,16 +6,16 @@
 /*   By: jshin <jshin@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 17:55:38 by jshin             #+#    #+#             */
-/*   Updated: 2021/12/08 17:25:35 by jshin            ###   ########.fr       */
+/*   Updated: 2021/12/11 16:14:15 by jshin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-## include <string.h>
-## include <stdlib.h>
-## include <unistd.h>
+# include <string.h>
+# include <stdlib.h>
+# include <unistd.h>
 
 typedef struct s_list
 {
