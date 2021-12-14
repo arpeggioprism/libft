@@ -97,6 +97,8 @@ Description | Param. #1 | Param. #2 | Param. #3 | Param. #4 | Return Value
 :-----------: | :-----------: | :-----------: | :-----------: | :-----------: | :-----------:
 Copies n bytes from memory area  src  to memory  area  dst, stopping when the character c is found, or after n characters are copied, whichever comes first. If copying takes place between objects that overlap, the behavior is undefined.| Memory area dst | Memory area src | A character to search | Number of bytes that memccpy() copied | A pointer to the next character in dst after c, or NULL if c was not found in the first n bytes
 
+return (`dst + i + 1`); / return (`NULL`);
+
 ## [ft_memmove](libft/ft_memmove.c)
 
 `void       *ft_memmove(void *dst, const void *src, size_t len)`
