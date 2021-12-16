@@ -100,6 +100,7 @@ Copies n bytes from memory area  src  to memory  area  dst, stopping when the ch
 return (`dst + i + 1`); / return (`NULL`);
 
 ## [ft_memmove](libft/ft_memmove.c)
+header: `string.h`
 
 `void       *ft_memmove(void *dst, const void *src, size_t len)`
 
