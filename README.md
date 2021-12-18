@@ -111,6 +111,7 @@ Copies len bytes from the memory of src to dst. Memories may overlap. First, the
 return (`*dst`);
 
  ## [ft_memchr](libft/ft_memchr.c)
+header: `string.h`
 
 `void       *ft_memchr(const void *s, int c, size_t n)`
 
