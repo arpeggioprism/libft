@@ -129,6 +129,7 @@ Compares byte string s1 against byte string s2 | Memory area s1| Memory area s2 
 
 ## [ft_strlen](libft/ft_strlen.c)
 header: `string.h`
+
 `size_t     ft_strlen(const char *s)` `size_t     len`
 
 Description | Param. #1 | Return Values
@@ -183,8 +184,11 @@ Description | Param. #1 | Param. #2 | Return Value
 Copy a string, including the terminating null byte ('\0') | Destination array | String to be copied | A pointer to the destination string dst
 
 ## [ft_strlcpy](libft/ft_strlcpy.c)
+header: `string.h`
 
 `size_t     ft_strlcpy(char *dst, const char *src, size_t dstsize)`
+
+return (`len`);
 
 Description | Param. #1 | Param. #2 | Param. #3 | Return Value
 :-----------: | :-----------: | :-----------: | :-----------: | :-----------:
