@@ -206,12 +206,12 @@ Concatenate two strings (append s2 to s1), including the terminating null byte (
 
 `size_t     ft_strlcat(char *dst, const char *src, size_t size)`
 
-- `*dest` : 붙여넣을 문자열
+- `*dst` : 붙여넣을 문자열
 - `*src` : 복사할 문자열
-- `size` : size만큼의 복사를 한다. size는 문자열 끝의 NULL을 포함.
+- `size` : size만큼의 복사를 한다.(destsize) size는 문자열 끝의 NULL을 포함.
 
 **설명**
-- 두 문자열을 붙이는 함수이다. dest의 맨 뒤에 src를 붙인다.(size를 넘어갈 수 없음. 예외조건: 반환값 카테고리 참조.)
+- 두 문자열을 붙이는 함수이다. dst의 맨 뒤에 src를 붙인다.(size를 넘어갈 수 없음. 예외조건: 반환값 카테고리 참조.)
 - 만약 size가 dest의 길이 이하라면 문자열을 붙이는 과정이 사라지고 size가 더 크다면 size - 1만큼 src를 붙이고 마지막에 '\0'값을 넣어준다.
 - 이 함수는 strncat랑 똑같이 데이터를 복사하는 건데 보안 목적으로 strncat을 대신할 함수로 만들어졌다.
 - str 함수에서 l 과 n 의 차이
@@ -219,16 +219,14 @@ Concatenate two strings (append s2 to s1), including the terminating null byte (
 ![Untitled](https://fuzzy-silverfish-298.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fc517f9bb-b9ad-484c-87a6-022d1dc243d5%2FUntitled.png?table=block&id=2b2096ee-eab0-46cc-ba65-f8af5c678f9c&spaceId=9339d1b7-ab8e-4b14-943f-cbbfa865b61a&width=860&userId=&cache=v2)
 
 1. strlcat: 두 string을 연결하고 그 길이를 반환하는 함수(하지만, strlcat은 항상 두 string이 연결된 정확한길이를 반환하지 않는다. 반환값 카테고리 참조.)
-2. strncat: strlcat과 달리 srcs에서 n만큼의 길이만 떼어내 dest에 이어붙인다. 이어붙인 문자열 자체를 반환.
+2. strncat: strlcat과 달리 srcs에서 n만큼의 길이만 떼어내 dst에 이어붙인다. 이어붙인 문자열 자체를 반환.
 
 **반환값**
 - NULL을 뺀 길이로 계산한다.
-- destsize <= dest일 때, `src의 길이 + size`를 반환한다.
-- destsize > dest일 때, `src의 길이 + dst의 길이`를 반환한다.
-
- 
-- dest가 destsize보다 큰 경우는 destsize 크기를 벗어나기 때문에 문자열을 이어붙일 수가 없다. 따라서 연결작업은 건너 뛰고 return (destlen + srclen) 해준다고 생각하면 된다.
-- 즉, destsize는 10이지만 dest의 문자열의 길이가 4인 경우 src의 문자열은 6이 들어갈 수 있다. 반면 destsize가 10이지만 dest의 문자열의 길이가 11인 경우엔 CONCATENATE(연결과정)이 생략되고destsize의 길이와 + src길이값이 return 된다.
+- destsize <= dst일 때, `src의 길이 + size`를 반환한다.
+- destsize > dst일 때, `src의 길이 + dst의 길이`를 반환한다.
+- dst가 destsize보다 큰 경우는 destsize 크기를 벗어나기 때문에 문자열을 이어붙일 수가 없다. 따라서 연결작업은 건너 뛰고 return (destlen + srclen) 해준다고 생각하면 된다.
+- 즉, destsize는 10이지만 dst의 문자열의 길이가 4인 경우 src의 문자열은 6이 들어갈 수 있다. 반면 destsize가 10이지만 dest의 문자열의 길이가 11인 경우엔 CONCATENATE(연결과정)이 생략되고destsize의 길이와 + src길이값이 return 된다.
 
 ## [ft_strstr](libft/ft_strstr.c)
 
