@@ -225,6 +225,7 @@ Concatenate two strings (append s2 to s1), including the terminating null byte (
 - NULL을 뺀 길이로 계산한다.
 - destsize <= dst일 때, `src의 길이 + size`를 반환한다.
 - destsize > dst일 때, `src의 길이 + dst의 길이`를 반환한다.
+
 - dst가 destsize보다 큰 경우는 destsize 크기를 벗어나기 때문에 문자열을 이어붙일 수가 없다. 따라서 연결작업은 건너 뛰고 return (destlen + srclen) 해준다고 생각하면 된다.
 - 즉, destsize는 10이지만 dst의 문자열의 길이가 4인 경우 src의 문자열은 6이 들어갈 수 있다. 반면 destsize가 10이지만 dest의 문자열의 길이가 11인 경우엔 CONCATENATE(연결과정)이 생략되고destsize의 길이와 + src길이값이 return 된다.
 
