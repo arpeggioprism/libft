@@ -213,12 +213,10 @@ Concatenate two strings (append s2 to s1), including the terminating null byte (
 - strncat과의 다른점:
 - str 함수에서 l 과 n 의 차이
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c517f9bb-b9ad-484c-87a6-022d1dc243d5/Untitled.png)
+![Untitled](https://fuzzy-silverfish-298.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fc517f9bb-b9ad-484c-87a6-022d1dc243d5%2FUntitled.png?table=block&id=2b2096ee-eab0-46cc-ba65-f8af5c678f9c&spaceId=9339d1b7-ab8e-4b14-943f-cbbfa865b61a&width=860&userId=&cache=v2)
 
 1. strlcat: 두 string을 연결하고 그 길이를 반환하는 함수(하지만, strlcat은 항상 두 string이 연결된 정확한길이를 반환하지 않는다. return value 참조.)
 2. strncat: strlcat과 달리 srcs에서 n만큼의 길이만 떼어내 dest에 이어붙인다. 이어붙인 문자열 자체를 반환.
-
-
 
 **반환값**
 - dest의 길이를 반환한다. 복사된 길이를 반환하므로 길이에서 NULL을 뺀 길이로 계산한다.
