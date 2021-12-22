@@ -219,7 +219,7 @@ Concatenate two strings (append s2 to s1), including the terminating null byte (
 2. strncat: strlcat과 달리 srcs에서 n만큼의 길이만 떼어내 dest에 이어붙인다. 이어붙인 문자열 자체를 반환.
 
 
-**Return Value**
+**반환값**
 - dest의 길이를 반환한다. 복사된 길이를 반환하므로 길이에서 NULL을 뺀 길이로 계산한다.
 - destsize <= dest일 때, strlen(src) + size 를 반환한다.
 - destsize > dest일 때, strlen(src) + strlen(dst)를 반환한다.
