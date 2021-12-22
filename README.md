@@ -208,7 +208,7 @@ Concatenate two strings (append s2 to s1), including the terminating null byte (
 
 - `*dst` : 붙여넣을 문자열
 - `*src` : 복사할 문자열
-- `size` : size만큼의 복사를 한다.(destsize) size는 문자열 끝의 NULL을 포함.
+- `size` : destsize. size만큼의 복사를 한다. size는 문자열 끝의 NULL을 포함.
 
 **설명**
 - 두 문자열을 붙이는 함수이다. dst의 맨 뒤에 src를 붙인다.(size를 넘어갈 수 없음. 예외조건: 반환값 카테고리 참조.)
