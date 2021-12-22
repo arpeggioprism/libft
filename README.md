@@ -206,6 +206,10 @@ Concatenate two strings (append s2 to s1), including the terminating null byte (
 
 `size_t     ft_strlcat(char *dst, const char *src, size_t size)`
 
+- `dest` : 붙여넣을 문자열
+- `src` : 복사할 문자열
+- `size` : size만큼의 복사를 한다. size는 문자열 끝의 NULL을 포함.
+
 **설명**
 - 두 문자열을 붙이는 함수이다. dest의 맨 뒤에 src를 붙인다.(size를 넘어갈 수 없음. 예외조건: 반환값 카테고리 참조.)
 - 만약 size가 dest의 길이 이하라면 문자열을 붙이는 과정이 사라지고 size가 더 크다면 size - 1만큼 src를 붙이고 마지막에 '\0'값을 넣어준다.
@@ -225,11 +229,6 @@ Concatenate two strings (append s2 to s1), including the terminating null byte (
  
 - dest가 destsize보다 큰 경우는 destsize 크기를 벗어나기 때문에 문자열을 이어붙일 수가 없다. 따라서 연결작업은 건너 뛰고 return (destlen + srclen) 해준다고 생각하면 된다.
 - 즉, destsize는 10이지만 dest의 문자열의 길이가 4인 경우 src의 문자열은 6이 들어갈 수 있다. 반면 destsize가 10이지만 dest의 문자열의 길이가 11인 경우엔 CONCATENATE(연결과정)이 생략되고destsize의 길이와 + src길이값이 return 된다.
-
-
-Description | Param. #1 | Param. #2 | Param. #3 | Return Value
-:-----------: | :-----------: | :-----------: | :-----------: | :-----------:
-Concatenate the string src to the end of dst. It will concatenate at most size - strlen(dst) - 1 bytes, NUL-terminating the result | Destination array | String to be appended to dst | Maximum number of characters to be appended | The initial length of dst plus the length of src
 
 ## [ft_strstr](libft/ft_strstr.c)
 
