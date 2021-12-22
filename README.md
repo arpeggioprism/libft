@@ -210,6 +210,7 @@ strlcat 목적
 이 함수는 strncat랑 똑같이 데이터를 복사하는 건데 보안 목적으로 strncat을 대신할 함수로 만들어졌다.
 strlcat ()은 dst 의 초기 길이 + src 길이를 의미한다.
 
+
 Return Value
 dest의 길이를 반환한다. 복사된 길이를 반환하므로 길이에서 NULL을 뺀 길이로 계산한다.
 destsize가 dest의 크기보다 작을 때, strlen(src) + size 를 반환한다.
