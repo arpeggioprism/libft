@@ -545,3 +545,29 @@ dst에는 src의 2바이트만 들어가게 된다.
 반환 값은 7이 된다.
 
  출처: https://whatdocumentary.tistory.com/45
+
+ trlcat에 대하여
+환경
+c, c++
+c에서는 <string.h>
+c++에서는 <cstring>
+ 
+Prototype
+size_t    ft_strlcat(char *dest, const char *src, size_t destsize);
+dest : 붙여넣을 문자열
+src : dest 뒤에 연결할 문자열
+destsize : size만큼의 대상 버퍼사이즈를 가진다. dest길이 + src길이 + null값을 destsize로 생각해서 넣어야 한다.
+ 
+strlcat 목적
+이 함수는 strncat랑 똑같이 데이터를 복사하는 건데 보안 목적으로 strncat을 대신할 함수로 만들어졌다.
+strlcat ()은 dst 의 초기 길이 + src 길이를 의미한다.
+ 
+Return Value
+dest의 길이를 반환한다. 복사된 길이를 반환하므로 길이에서 NULL을 뺀 길이로 계산한다.
+destsize가 dest의 크기보다 작을 때, strlen(src) + size 를 반환한다.
+destsize가 dest의 크기보다 클 때, strlen(src) + strlen(dst)를 반환한다.
+처음에 굉장히 헷갈렸던 부분이 destsize이다. dest가 destsize보다 큰 경우는 destsize 크기를 벗어나기 때문에 문자열을 이어붙일 수가 없다. 따라서 연결작업은 건너 뛰고 return (destlen + srclen) 해준다고 생각하면 된다.
+즉, destsize는 10이지만 dest의 문자열의 길이가 4인 경우 src의 문자열은 6이 들어갈 수 있다. 반면 destsize가 10이지만 dest의 문자열의 길이가 11인 경우엔 CONCATENATE(연결과정)이 생략되고destsize의 길이와 + src길이값이 return 된다.
+
+
+출처: https://minsoftk.tistory.com/32 [Minsoftk]
