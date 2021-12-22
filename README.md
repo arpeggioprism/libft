@@ -520,3 +520,28 @@ print(arr);
  
 
 출처: https://blockdmask.tistory.com/441 [개발자 지망생]
+
+ strlcat함수
+ 
+ 이 함수는 strcat 함수와 동일하다. 보안 목적을 위해 strcat 대신 사용할 목적으로 만들어졌다.
+dst의 기존 데이터에 src 데이터를 붙여 넣는다. size 만큼
+여기서 중요한 건 size이다.
+size = dst 길이 + 붙일 데이터 길이 + NULL 값을 넣어야 한다.
+dst 길이보다 작으면 src 데이터가 넣어지진 않는다.
+즉, size는 dst 길이 + NULL 길이보다 클 때부터 src 데이터가 들어간다.
+ 
+예를 들어
+dst의 길이가 5이고
+src의 길이가 4이면
+size의 길이가 4이면 dst 길이보다 작으므로 src 데이터가 들어가지 않는다.
+src 데이터를 넣으려면 size를 5+1(dst길이 + NULL) 이상의 값으로 넣어야 한다.
+만약 size를 8로 주면
+dst에는 src의 2바이트만 들어가게 된다.
+ 
+반환 값
+이 값은 dst와 복사된 src의 길이의 총합이다.
+여기에는 NULL 값은 제외되어 계산된다.
+만약 dst 길이가 5이고 src에서 2바이트만 복사했다면
+반환 값은 7이 된다.
+
+ 출처: https://whatdocumentary.tistory.com/45
