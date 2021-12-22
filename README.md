@@ -206,8 +206,8 @@ Concatenate two strings (append s2 to s1), including the terminating null byte (
 
 `size_t     ft_strlcat(char *dst, const char *src, size_t size)`
 
-- `dest` : 붙여넣을 문자열
-- `src` : 복사할 문자열
+- `*dest` : 붙여넣을 문자열
+- `*src` : 복사할 문자열
 - `size` : size만큼의 복사를 한다. size는 문자열 끝의 NULL을 포함.
 
 **설명**
