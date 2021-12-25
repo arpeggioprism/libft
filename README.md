@@ -160,20 +160,35 @@ Description | Param. #1 | Param. #2 | Return Value
 Allocates a specific amount of memory to copy a string until the occurence of c. Example: ft_strcdup("Blue", 'u') -> "Bl"  | The string to copy before c | The character c | A pointer to the new string
 
 ## [ft_strchr](libft/ft_strchr.c)
+header: `string.h`
 
 `char		*ft_strchr(const char *s, int c)`
 
-Description | Param. #1 | Param. #2 | Return Value
-:-----------: | :-----------: | :-----------: | :-----------:
-Locates the first occurrence of 'c' in the string pointed to by 's'. The terminating null character is considered to be part of the string, therefore if 'c' is '\0', locates the terminating '\0'| Pointer to string | Character to be located | A pointer to the first occurrence of the character c in the string or NULL if the character is not found
+`const char *s`: 검색할 문자열
+`int c`: 일치하는 문자
+
+**설명**
+첫번재 매개변수 str의 문자열에서 두번째 매개변수로 들어온 c가 존재하는지 검사하고, 문자가 존재하면 해당 문자가 존재하는 곳의 포인터를 반환하고, 존재하지 않으면 널포인터 반환. 
+
+**반환값**
+일치하는 문자 존재: `(char *)(s + i)`
+존재안함: `NULL`
+
 
 ## [ft_strrchr](libft/ft_strrchr.c)
+header: `string.h`
 
 `char		*ft_strrchr(const char *s, int c)`
 
-Description | Param. #1 | Param. #2 | Return Value
-:-----------: | :-----------: | :-----------: | :-----------:
-Locates the last occurrence of 'c' in the string pointed to by 's'. The terminating null character is considered to be part of the string, therefore if 'c' is '\0', locates the terminating '\0'| Pointer to string | Character to be located | A pointer to the last occurrence of the character c in the string or NULL if the character is not found
+`char* s`: 검색할 문자열
+`int c`: 일치하는 문자
+
+**설명**
+문자열에서 문자를 검색하고 가장 마지막으로 나타나는 위치를 찾는다. 그리고 이를 가리키는 포인터를 리턴한다. 이 때 문자열의 널 종료 문자 역시 C 문자열의 일부분이라 생각한다. 따라서 이 함수는 문자열의 널 종료 문자를 가리키는데 사용될 수 있다.
+
+**반환값**
+일치하는 문자 존재: `(char *)(s + i)`
+존재안함: `NULL`
 
 ## [ft_strcpy](libft/ft_strcpy.c)
 
@@ -294,16 +309,30 @@ Description | Param. #1 | Return Value
 Checks for any printable character including space| The character to test | 0 if the character tests false and 1 if the character tests true
 
 ## [ft_toupper](libft/ft_toupper.c)
+header: `ctype.h`
 
 `int        ft_toupper(int c)`
+
+**설명**
+소문자 알파벳을 대문자 알파벳으로 변경해준다.
+
+**반환값**
+대문자 알파벳 `c`를 반환.
 
 Description | Param. #1 | Return Value
 :-----------: | :-----------: | :-----------:
 If the character passed as an argument is a lowercase, convert to upper| The character to convert | If c is a lowercase letter, returns its uppercase equivalent. Otherwise,  it  returns  c.
 
 ## [ft_tolower](libft/ft_tolower.c)
+header: `ctype.h`
 
 `int        ft_tolower(int c)`
+
+**설명**
+대문자 알파벳을 소문자 알파벳으로 변경해준다.
+
+**반환값**
+소문자 알파벳 `c`를 반환.
 
 Description | Param. #1 | Return Value
 :-----------: | :-----------: | :-----------:
