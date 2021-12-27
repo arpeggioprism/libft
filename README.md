@@ -260,6 +260,19 @@ Description | Param. #1 | Param. #2 | Param. #3 | Return Value
 :-----------: | :-----------: | :-----------: | :-----------: | :-----------:
 Locate substring, where not more than 'len' characters are searched. Finds the first occurrence of the substring 'needle' in  the  string 'haystack'. The terminating null bytes ('\0') are not compared. | String to be scanned | The small string to be searched in 'haystack' string|The maximum amount of characters to be searched |A pointer to the first character of the first occurrence of little is returned. NULL if the substring is not found. If 'needle' is an empty string, 'haystack' is returned
 
+## [ft_strncmp](libft/ft_strncmp.c)
+
+`int       strncmp(const char* str1, const char* str2, size_t num)`
+
+**설명**
+- 두 문자열의 일부 문자들을 비교한다.
+- C 형식 문자열인 str1 의 처음 num 개의 문자를 다른 C 형식 문자열인 str2 의 처음 num 개의 문자와 비교한다.
+- 이 함수는 처음 문자들 부터 비교를 수행하되, 다른 문자가 나타나거나 NULL 에 도달하거나, num 개의 문자들을 비교할 때 까지 비교를 수행하게 된다.
+
+**반환값**
+- 만일 num 개의 문자가 모두 일치한다면 0 을 리턴한다.
+- 비교한 num 개의 문자 중 최초로 일치하지 않는 문자의 값이 str1 이 더 큰 경우 0 보다 큰 값을, str2 가 더 큰 경우 0 보다 작은 값을 리턴한다.
+- 
 ## [ft_atoi](libft/ft_atoi.c)
 
 `int        ft_atoi(const char *str)`
