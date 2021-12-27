@@ -115,18 +115,36 @@ header: `string.h`
 
 `void       *ft_memchr(const void *s, int c, size_t n)`
 
-Description | Param. #1 | Param. #2 | Param. #3 | Return Value
-:-----------: | :-----------: | :-----------: | :-----------: | :-----------:
-Scans the initial n bytes of s for the first instance of c | Memory area s| A character to search | The number of bytes | A pointer to the matching byte or NULL if the character does not occur in the given memory area
+**설명**
+- 메모리 블록에서의 문자를 찾는다.
+- ptr 이 가리키는 메모리의 처음 num 바이트 중에서 처음으로 value 와 일치하는 값의 주소를 리턴한다.
+- 참고적으로 위에 나타난 두 함수의 원형은 C++ 에서 정의된 방식으로 경우에 따라 오버로딩 되어서 나타난다. C 에서는 함수 오버로딩이 없기 때문에 다음과 같이 하나의 원형만을 가진다.
+
+**반환값**
+- 메모리 블록에서 value 와 일치하는 값이 있다면 그 곳의 주소를 리턴하고 값을 찾지 못한다면 NULL 을 리턴한다.
 
  ## [ft_memcmp](libft/ft_memcmp.c)
+header: `string.h`
 
-`void       *ft_memcmp(void *dst, const void *src, size_t n)`
+`void       *ft_memcmp(void *s1, const void *s2, size_t n)`
 
-Description | Param. #1 | Param. #2 | Param. #3 | Return Value
-:-----------: | :-----------: | :-----------: | :-----------: | :-----------:
-Compares byte string s1 against byte string s2 | Memory area s1| Memory area s2 | The number of bytes | < 0 if s1 is less than s2, > 0 if s1 is graeter than s2, = 0 if s1 is equal to s2 
+- `s1` : 메모리 블록을 가리키는 포인터
+- `s2` : 메모리 블록을 가리키는 포인터
+- `num` : 비교할 바이트 수
 
+**설명**
+- 두 개의 메모리 블록을 비교한다.
+- s1 이 가리키는 처음 num 바이트의 데이터와 s2 가 가리키는 처음 num 바이트의 데이터를 비교하여 이들이 같다면 0 을 리턴하고 다르다면 0 이 아닌 값을 리턴한다. 이 때 리턴되는 값은 아래를 참고.
+- strncmp와의 차이점
+1. 중간에 NULL 이 포함되면, 그 뒤의 내용이 틀려도 strncmp는 같다고 생각합니다.
+"strcmp\0abc" , "strcmp\0123" 을 strncmp는 같다고 생각하지만 memcmp로 위의 10 바이트를 검사하면 틀리다고 나옵니다.
+
+이건 str 계열의 함수가 중간에 NULL을 만나면 종료하기 때문입니다.
+**반환값**
+- 만일 두 메모리 블록이 정확히 같다면 0 을 리턴한다.
+- 만일 두 메모리 블록이 다를 경우, s1 과 s2 가 가리키는 메모리 블록에서 앞에서부터 처음으로 다른 바이트를 살펴 보는데, 그 바이트를 unsigned char 로 해석하였을 때, 그 값이 s1 이 더 크면 0 보다 큰 값을, 아니면 0 보다 작은 값을 리턴한다.
+
+이건 str 계열의 함수가 중간에 NULL을 만나면 종료하기 때문입니다.
 ## [ft_strlen](libft/ft_strlen.c)
 header: `string.h`
 
@@ -218,6 +236,7 @@ Description | Param. #1 | Param. #2 | Return Value
 Concatenate two strings (append s2 to s1), including the terminating null byte ('\0') | Destination array | String to be appended to dst | A pointer to the resulting string dst
 
 ## [ft_strlcat](libft/ft_strlcat.c)
+header: `string.h`
 
 `size_t     ft_strlcat(char *dst, const char *src, size_t size)`
 
@@ -261,6 +280,7 @@ Description | Param. #1 | Param. #2 | Param. #3 | Return Value
 Locate substring, where not more than 'len' characters are searched. Finds the first occurrence of the substring 'needle' in  the  string 'haystack'. The terminating null bytes ('\0') are not compared. | String to be scanned | The small string to be searched in 'haystack' string|The maximum amount of characters to be searched |A pointer to the first character of the first occurrence of little is returned. NULL if the substring is not found. If 'needle' is an empty string, 'haystack' is returned
 
 ## [ft_strncmp](libft/ft_strncmp.c)
+header: `string.h`
 
 `int       strncmp(const char* str1, const char* str2, size_t num)`
 
