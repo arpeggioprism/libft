@@ -415,12 +415,24 @@ Description | Param. #1 | Return Value
 If the character passed as an argument is an uppercase, convert to lower| The character to convert | If c is a uppercase letter, returns its lowercase equivalent. Otherwise,  it  returns  c.
 
 ## [ft_calloc](libft/ft_calloc.c)
+header: `stdlib.h`
 
 `void       *ft_calloc(size_t count, size_t size)`
 
-Description | Param. #1 | Param. #2 | Return Value
-:-----------: | :-----------: | :-----------: | :-----------:
- Allocates enough space for count objects that are size bytes of memory each, and returns a pointer to the allocated memory. The allocated memory is filled with bytes of value zero | Number of elements to be allocated | Size of elements | A pointer to the allocated memory, or NULL if the request fails
+- `count` : 다음 파라미터인 size의 갯수. 즉, 할당할 배열의 갯수.
+- `size` : item 하나의 크기.
+
+**설명**
+- calloc함수는 malloc함수와 같은 기능을 지니고 있다. 다만 사용하는 형태가 조금 다를 뿐이다.
+- calloc 함수는 size 크기의 변수를 count 갯수만큼 저장할 수 있는 메모리 공간을 할당하라는 의미를 갖는다.
+- malloc함수와 calloc함수의 차이점
+1. malloc은 할당된 공간의 값을은 바꾸지 않는다.
+2. calloc은 할당된 공간의 값을 모두 0으로 바꾼다.
+3. 배열을 할당하고 모두 0으로 초기화할 필요가 있을경우에는 calloc을 쓰면 편하다.
+
+**반환값**
+성공: `할당된 메모리의 시작 주소`
+실패: `NULL`
 
 ## [ft_substr]
 `char   *ft_substr(char const *s, unsigned int start, size_t len)`
