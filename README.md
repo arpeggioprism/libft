@@ -440,12 +440,19 @@ header: `stdlib.h`
 성공: `할당된 메모리의 시작 주소`
 실패: `NULL`
 
-## [ft_substr]
+## [ft_substr] 
 `char   *ft_substr(char const *s, unsigned int start, size_t len)`
 
-Description | Param. #1 | Param. #2 | Param. #3 | Return Value
-:-----------: | :-----------: | :-----------: | :-----------: | :-----------:
-Allocates (with malloc) and returns a substring from the string given in argument. The substring begins at index 'start' and is of maximum size 'len'| The string from which create the substring | The start index of the substring in the string| The maximum length of the substring | The substring. NULL if the allocation fails
+`s`: 원본 문자열
+`start` : 문자열 s에 있는 하위 문자열의 시작점
+`len` : 하위 문자열의 길이
+
+**설명**
+malloc(3)를 사용하여 할당하고 문자열 's'에서 하위 문자열을 반환. 하위 문자열은 인덱스 'start'에서 시작되며 최대 크기 'len'
+
+**반환값**
+성공: '잘라낸 문자열의 시작 주소값'
+실패: 'NULL'
 
 ## [ft_strjoin]
 
