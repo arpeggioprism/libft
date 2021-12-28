@@ -154,11 +154,17 @@ Description | Param. #1 | Return Values
 Calculates the length of the string pointed to by s, excluding the terminating null byte ('\0')	| The string to calculate | Number of characters in the string pointed to by s
 
 ## [ft_strdup](libft/ft_strdup.c) 
-`char       *ft_strdup(const char *s))`
+header: `string.h`
 
-Description | Param. #1 | Return Values
-:-----------: | :-----------: | :-----------:
-Duplicate string s1. Memory  for  the new string is obtained with malloc, and can  be  freed with free | The string to duplicate| A pointer   to  the  duplicated  string.  NULL  if  insufficient  memory  was available
+`char       *ft_strdup(const char *s1))`
+
+- `s1` : 복사하게 될 문자열
+
+**설명**
+문자열 s1의 길이를 잰 후 동적할당을 한 후에 s1을 복사한 후 복사된 새로운 문자열을 리턴해 주는 함수이다. 동적할당을 했기 때문에 메모리 누수에 주의하자.
+
+**반환값**
+복사하고싶은 문자열을 동적할당을 한 후 할당된 `새로운 문자열의 포인터`를 리턴해 준다.
 
 ## [ft_strndup](libft/ft_strndup.c)
 
