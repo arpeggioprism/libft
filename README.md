@@ -458,17 +458,33 @@ malloc(3)를 사용하여 할당하고 문자열 's'에서 하위 문자열을 �
 
 `char *ft_strjoin(char const *s1, char const *s2)`
 
-Description | Param. #1 | Param. #2 | Return Value
-:-----------: | :-----------: | :-----------: | :-----------:
-Allocates (with malloc) and returns a new string, result of the concatenation of s1 and s2 |The prefix string |The suffix string | The new string. NULL if the allocation fails
+`s1` : 접두사 문자열
+`s2` : 접미사 문자열
+
+**설명**
+- malloc(3)를 할당하고 새 문자열을 반환하며, 이는 's1'과 's2'를 연결한 결과물
+- 반환할 메모리에 접두사 문자열을 복사하고, 그 뒤에 접미사 문자열을 복사한 후 마지막에 '\0'값을 넣는다.
+
+**반환값**
+성공: `이어 붙인 새 문자열의 주소값`
+실패: `NULL`
 
 ## [ft_strtrim]
 
-`char *ft_strjoin(char const *s1, char const *s2)`
+`char *ft_strjoin(char const *s1, char const *set)`
 
-Description | Param. #1 | Param. #2 | Return Value
-:-----------: | :-----------: | :-----------: | :-----------:
-Allocates (with malloc) and returns a copy of the string given as argument without the characters specified in the set argument at the beginning and the end of the string|The string to be trimmed |The reference set of character to trim | The trimmed string. NULL if the allocation fails
+`s1` : 원본 문자열
+`set` : 제거할 참조 문자열
+
+**설명**
+- malloc(3)를 사용하여 할당하고 문자열의 처음과 끝에서 'set'에 지정된 문자가 제거된 's1' 복사본을 반환.
+- 주의해야할 점은 원본 문자열 전체가 set에 포함되는 문자일 때이다.
+- 우선, 앞에서 문자들을 지우고, '\0''을 제외하고 뒷부분부터 탐색을 한다. 이 때 end 값이 start 보다 작아진다면 원본 문자열에 지워야할 문자를 제외하면 없다는 뜻이므로, '\0' 값을 할당하여 반환한다.
+- 그렇지 않으면 지우고난 후 end - start + 1하여 '\0'값 포함한 길이 만큼 할당하여 결과를 복사하여 반환한다.
+
+**반환값**
+성공: `s1에서 찾은 set에 포함된 문자들을 양 끝에서 제거한 후 결과 문자열`
+실패: `NULL`
 
 ## [ft_strsplit]
 
