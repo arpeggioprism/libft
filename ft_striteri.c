@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strscpy.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jshin <jshin@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/06 16:44:58 by jshin             #+#    #+#             */
-/*   Updated: 2021/12/06 16:46:50 by jshin            ###   ########.fr       */
+/*   Created: 2022/01/29 02:30:09 by jshin             #+#    #+#             */
+/*   Updated: 2022/01/29 02:32:26 by jshin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strscpy(char *word, char *start, char const *end)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	char	*temp;
+	unsigned int	i;
 
-	temp = word;
-	while (start != end)
+	i = 0;
+	if (s == NULL || f == NULL)
+		return ;
+	while (s[i])
 	{
-		*temp = *start;
-		temp++;
-		start++;
+		f(i, &s[i]);
+		i++;
 	}
-	*temp = '\0';
 }

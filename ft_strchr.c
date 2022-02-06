@@ -6,7 +6,7 @@
 /*   By: jshin <jshin@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 16:05:29 by jshin             #+#    #+#             */
-/*   Updated: 2021/11/28 17:04:25 by jshin            ###   ########.fr       */
+/*   Updated: 2022/01/28 12:45:31 by jshin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ char	*ft_strchr(const char *s, int c)
 {
 	int	i;
 
-	if (!s)
-		return (NULL);
 	i = 0;
 	while (s[i])
 	{

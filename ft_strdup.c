@@ -6,7 +6,7 @@
 /*   By: jshin <jshin@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 11:12:18 by jshin             #+#    #+#             */
-/*   Updated: 2021/11/30 11:52:03 by jshin            ###   ########.fr       */
+/*   Updated: 2022/01/28 12:46:55 by jshin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ char	*ft_strdup(const char *s1)
 	char	*str;
 	size_t	i;
 
-	if (!s1)
-		return (NULL);
 	str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + 1));
 	if (!str)
 		return (NULL);

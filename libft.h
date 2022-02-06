@@ -6,7 +6,7 @@
 /*   By: jshin <jshin@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 17:55:38 by jshin             #+#    #+#             */
-/*   Updated: 2021/12/11 16:24:19 by jshin            ###   ########.fr       */
+/*   Updated: 2022/01/29 02:55:41 by jshin            ###   ########.fr       */
 /*   Updated: 2021/12/09 16:26:12 by jshin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -60,6 +60,7 @@ void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
+void			ft_striteri(char *s, void (*f)(unsigned int, char*));
 
 t_list			*ft_lstnew(void *content);
 void			ft_lstadd_front(t_list **lst, t_list *new);

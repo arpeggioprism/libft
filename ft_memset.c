@@ -6,7 +6,7 @@
 /*   By: jshin <jshin@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 16:54:49 by jshin             #+#    #+#             */
-/*   Updated: 2021/11/25 18:14:41 by jshin            ###   ########.fr       */
+/*   Updated: 2022/01/28 12:44:23 by jshin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void	*ft_memset(void *s, int c, size_t n)
 {
 	size_t	i;
 
-	if (!s)
-		return (NULL);
 	i = 0;
 	while (i < n)
 		((unsigned char *)s)[i++] = (unsigned char)c;

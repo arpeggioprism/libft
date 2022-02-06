@@ -6,7 +6,7 @@
 /*   By: jshin <jshin@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 05:21:47 by jshin             #+#    #+#             */
-/*   Updated: 2021/11/30 06:03:40 by jshin            ###   ########.fr       */
+/*   Updated: 2022/01/28 13:06:52 by jshin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	void	*ptr;
 
-	ptr = (void *)malloc(count * size);
+	ptr = malloc(count * size);
 	if (!ptr)
 		return (NULL);
-	ft_bzero(ptr, (count * size));
+	ft_memset(ptr, 0, (count * size));
 	return (ptr);
 }
